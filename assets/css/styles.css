@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 
 
-/* BASIC RESET */
+/* RESET */
 * {
   box-sizing: border-box;
 }
 
 
-/* PAGE AND STRAWBERRY GIF */
+/* PAGE + STRAWBERRY IMAGE */
 body {
   margin: 0;
   min-height: 100vh;
@@ -18,8 +18,8 @@ body {
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.48),
-      rgba(255, 255, 255, 0.48)
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 255, 255, 0.55)
     ),
     url("https://media.tenor.com/v8NSX2pmEC4AAAAj/strawberries-strawberry.gif");
 
@@ -29,332 +29,178 @@ body {
 }
 
 
-/* FULL POEM AREA */
+/* POEM CONTAINER */
 .grid_container {
-  width: 100%;
+  width: min(1100px, 94%);
   min-height: 100vh;
 
-  padding: 8vh 5vw;
+  margin: 0 auto;
+  padding: 70px 25px;
 
   display: grid;
 
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(3, minmax(150px, 1fr));
+  grid-template-columns:
+    repeat(5, minmax(90px, max-content));
 
-  align-items: center;
-  justify-items: center;
+  grid-template-rows:
+    repeat(3, auto);
 
-  column-gap: 18px;
-  row-gap: 45px;
+  justify-content: center;
+  align-content: center;
+
+  column-gap: clamp(12px, 3vw, 48px);
+  row-gap: clamp(30px, 7vh, 85px);
 }
 
 
-/* EVERY WORD */
-.grid_container > div {
-  position: relative;
-  z-index: 2;
-
+/* EVERY POEM WORD */
+.grid_container div {
   font-family: "Chewy", cursive;
-  font-size: clamp(2.8rem, 5.2vw, 5.8rem);
-  line-height: 0.95;
-  white-space: nowrap;
 
-  color: #c41551;
+  font-size: clamp(2.3rem, 6vw, 5.8rem);
+  line-height: 0.9;
+
+  color: #be1650;
 
   text-shadow:
     3px 3px 0 #ffffff,
-    7px 7px 0 #ffb1c8,
-    10px 12px 20px rgba(102, 20, 52, 0.22);
+    6px 6px 0 #ffb6ca,
+    9px 9px 18px rgba(107, 20, 55, 0.25);
 
   cursor: pointer;
 
-  transform-origin: center;
-
   transition:
-    color 0.25s ease,
-    filter 0.25s ease;
+    transform 0.7s ease,
+    color 0.5s ease,
+    opacity 0.5s ease,
+    filter 0.5s ease;
 }
 
 
-/* ------------------------- */
 /* FIRST HAIKU LINE */
-/* STRAWBERRY DREAMS BLOOM */
-/* ------------------------- */
-
-.grid_container > div:nth-child(1) {
-  grid-column: 1 / 5;
+.grid_container div:nth-child(1) {
+  grid-column: 1;
   grid-row: 1;
-
-  --explode-x: -145px;
-  --explode-y: -110px;
-  --explode-rotate: -22deg;
+  transform: rotate(-7deg);
 }
 
-.grid_container > div:nth-child(2) {
-  grid-column: 5 / 8;
+.grid_container div:nth-child(2) {
+  grid-column: 2;
   grid-row: 1;
-
-  --explode-x: 10px;
-  --explode-y: -155px;
-  --explode-rotate: 18deg;
+  transform: translateY(20px) rotate(4deg);
 }
 
-.grid_container > div:nth-child(3) {
-  grid-column: 8 / 13;
+.grid_container div:nth-child(3) {
+  grid-column: 3;
   grid-row: 1;
-
-  --explode-x: 150px;
-  --explode-y: -95px;
-  --explode-rotate: 25deg;
+  transform: translateY(-15px) rotate(-4deg);
 }
 
 
-/* ------------------------- */
 /* SECOND HAIKU LINE */
-/* SOFT COLORS SCATTER WHEN CLICKED */
-/* ------------------------- */
-
-.grid_container > div:nth-child(4) {
-  grid-column: 1 / 3;
+.grid_container div:nth-child(4) {
+  grid-column: 1;
   grid-row: 2;
-
-  --explode-x: -170px;
-  --explode-y: -20px;
-  --explode-rotate: -25deg;
+  color: #ff4678;
+  transform: rotate(5deg);
 }
 
-.grid_container > div:nth-child(5) {
-  grid-column: 3 / 5;
+.grid_container div:nth-child(5) {
+  grid-column: 2;
   grid-row: 2;
-
-  --explode-x: -95px;
-  --explode-y: 120px;
-  --explode-rotate: 20deg;
+  color: #ff4678;
+  transform: translateY(-18px) rotate(-5deg);
 }
 
-.grid_container > div:nth-child(6) {
-  grid-column: 5 / 8;
+.grid_container div:nth-child(6) {
+  grid-column: 3;
   grid-row: 2;
-
-  --explode-x: 10px;
-  --explode-y: -135px;
-  --explode-rotate: -18deg;
+  color: #ff4678;
+  transform: translateY(18px) rotate(4deg);
 }
 
-.grid_container > div:nth-child(7) {
-  grid-column: 8 / 10;
+.grid_container div:nth-child(7) {
+  grid-column: 4;
   grid-row: 2;
-
-  --explode-x: 90px;
-  --explode-y: 115px;
-  --explode-rotate: 22deg;
+  color: #ff4678;
+  transform: translateY(-12px) rotate(-3deg);
 }
 
-.grid_container > div:nth-child(8) {
-  grid-column: 10 / 13;
+.grid_container div:nth-child(8) {
+  grid-column: 5;
   grid-row: 2;
-
-  --explode-x: 175px;
-  --explode-y: -25px;
-  --explode-rotate: -27deg;
+  color: #ff4678;
+  transform: translateY(16px) rotate(6deg);
 }
 
 
-/* ------------------------- */
 /* THIRD HAIKU LINE */
-/* BRIGHT IDEAS DANCE */
-/* ------------------------- */
-
-.grid_container > div:nth-child(9) {
-  grid-column: 2 / 5;
+.grid_container div:nth-child(9) {
+  grid-column: 2;
   grid-row: 3;
-
-  color: #79a92d;
-
-  --explode-x: -140px;
-  --explode-y: 115px;
-  --explode-rotate: 24deg;
+  color: #7ea936;
+  transform: rotate(-5deg);
 }
 
-.grid_container > div:nth-child(10) {
-  grid-column: 5 / 8;
+.grid_container div:nth-child(10) {
+  grid-column: 3;
   grid-row: 3;
-
-  color: #79a92d;
-
-  --explode-x: 0;
-  --explode-y: 150px;
-  --explode-rotate: -20deg;
+  color: #7ea936;
+  transform: translateY(20px) rotate(5deg);
 }
 
-.grid_container > div:nth-child(11) {
-  grid-column: 8 / 11;
+.grid_container div:nth-child(11) {
+  grid-column: 4;
   grid-row: 3;
-
-  --explode-x: 145px;
-  --explode-y: 110px;
-  --explode-rotate: 28deg;
+  color: #7ea936;
+  transform: translateY(-10px) rotate(-5deg);
 }
 
 
-/* EMPHASIZE THE FINAL WORD OF EACH LINE */
-.grid_container > .last {
-  color: #8f1644;
+/* MAKE THE LAST WORD OF EACH LINE EXTRA BOLD */
+.last {
+  color: #8c1643 !important;
+  font-size: clamp(2.8rem, 7vw, 6.5rem) !important;
 }
 
 
-/* WORD GLOWS WHEN HOVERED */
-.grid_container > div:hover {
-  color: #ffca3a;
-
-  filter:
-    drop-shadow(0 0 8px #ffffff)
-    drop-shadow(0 0 18px #ff5d8f);
-
-  animation: explode-and-return 1.05s
-    cubic-bezier(0.18, 0.75, 0.26, 1);
+/* PLAYFUL HOVER BEFORE THE EXPLODING EFFECT */
+.grid_container div:hover {
+  color: #ffcf3e;
+  transform: scale(1.25) rotate(8deg);
+  filter: drop-shadow(0 0 12px #ff91b1);
 }
 
 
-/* EXPLODE OUTWARD, THEN RETURN */
-@keyframes explode-and-return {
-
-  0% {
-    transform:
-      translate(0, 0)
-      rotate(0deg)
-      scale(1);
-
-    opacity: 1;
-  }
-
-  32% {
-    transform:
-      translate(
-        var(--explode-x),
-        var(--explode-y)
-      )
-      rotate(var(--explode-rotate))
-      scale(1.55);
-
-    opacity: 0.35;
-  }
-
-  56% {
-    transform:
-      translate(-12px, 10px)
-      rotate(-8deg)
-      scale(0.82);
-
-    opacity: 0.75;
-  }
-
-  76% {
-    transform:
-      translate(9px, -7px)
-      rotate(5deg)
-      scale(1.1);
-
-    opacity: 1;
-  }
-
-  100% {
-    transform:
-      translate(0, 0)
-      rotate(0deg)
-      scale(1);
-
-    opacity: 1;
-  }
-}
-
-
-/* PHONE AND SMALL SCREEN VERSION */
-@media (max-width: 750px) {
+/* PHONE VERSION */
+@media (max-width: 700px) {
 
   body {
     overflow: auto;
-    background-size: 160px auto;
+    background-size: 170px auto;
   }
 
   .grid_container {
     min-height: 100vh;
 
-    padding: 55px 16px;
+    grid-template-columns:
+      repeat(5, minmax(48px, auto));
 
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: repeat(6, minmax(90px, auto));
+    padding: 55px 12px;
 
-    column-gap: 8px;
-    row-gap: 25px;
+    column-gap: 7px;
+    row-gap: 55px;
   }
 
-  .grid_container > div {
-    font-size: clamp(2rem, 9vw, 3.4rem);
+  .grid_container div {
+    font-size: clamp(1.7rem, 7vw, 3rem);
+
+    text-shadow:
+      2px 2px 0 #ffffff,
+      4px 4px 0 #ffb6ca;
   }
 
-  .grid_container > div:nth-child(1) {
-    grid-column: 1 / 4;
-    grid-row: 1;
-  }
-
-  .grid_container > div:nth-child(2) {
-    grid-column: 4 / 7;
-    grid-row: 1;
-  }
-
-  .grid_container > div:nth-child(3) {
-    grid-column: 2 / 6;
-    grid-row: 2;
-  }
-
-  .grid_container > div:nth-child(4) {
-    grid-column: 1 / 3;
-    grid-row: 3;
-  }
-
-  .grid_container > div:nth-child(5) {
-    grid-column: 3 / 5;
-    grid-row: 3;
-  }
-
-  .grid_container > div:nth-child(6) {
-    grid-column: 4 / 7;
-    grid-row: 4;
-  }
-
-  .grid_container > div:nth-child(7) {
-    grid-column: 1 / 3;
-    grid-row: 4;
-  }
-
-  .grid_container > div:nth-child(8) {
-    grid-column: 3 / 7;
-    grid-row: 5;
-  }
-
-  .grid_container > div:nth-child(9) {
-    grid-column: 1 / 3;
-    grid-row: 6;
-  }
-
-  .grid_container > div:nth-child(10) {
-    grid-column: 3 / 5;
-    grid-row: 6;
-  }
-
-  .grid_container > div:nth-child(11) {
-    grid-column: 5 / 7;
-    grid-row: 6;
-  }
-}
-
-
-/* ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-
-  .grid_container > div:hover {
-    animation: none;
-    transform: scale(1.12);
+  .last {
+    font-size: clamp(2rem, 8vw, 3.6rem) !important;
   }
 }
